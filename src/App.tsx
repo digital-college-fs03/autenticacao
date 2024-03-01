@@ -7,6 +7,8 @@ import { Layout } from './layouts/Layout'
 
 import { PublicPage } from './pages/PublicPage'
 import { PrivatePage } from './pages/PrivatePage'
+import { ProtectPage } from './components/Auth/ProtectPage'
+import { LoginPage } from './pages/LoginPage'
 
 function App() {
   return (
@@ -18,8 +20,14 @@ function App() {
             element={<PublicPage />}
           />
           <Route
+            path="/login"
+            element={<LoginPage />}
+          />
+          <Route
             path="/private"
-            element={<PrivatePage />}
+            element={<ProtectPage>
+              <PrivatePage />
+            </ProtectPage>}
           />
         </Route>
       </Routes>
