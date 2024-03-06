@@ -1,4 +1,7 @@
+export type User = { username: string, abilities: string[] } | null
+
 export interface AppContextType {
-    user: any
-    signIn: (username: string, password: string) => Promise<unknown>
+    user: User
+    signIn: (username: string, password: string) => Promise<User>
+    signOut: () => Promise<boolean>
 }
