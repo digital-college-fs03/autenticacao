@@ -24,11 +24,13 @@ function App() {
             element={<LoginPage />}
           />
           <Route
-            path="/private"
-            element={<ProtectPage>
-              <PrivatePage />
-            </ProtectPage>}
-          />
+            element={<ProtectPage/>}
+          >
+            <Route
+              path="/private"
+              element={<PrivatePage />}
+            />
+          </Route>
         </Route>
       </Routes>
     </AppProvider>
